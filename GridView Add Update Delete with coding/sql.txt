@@ -1,0 +1,4 @@
+create database STUDB
+create table student(stuname varchar(20),roll int primary key,class varchar(20),sec varchar(20))
+insert into student values('Raju',3,'VI','A')
+select * from student;
