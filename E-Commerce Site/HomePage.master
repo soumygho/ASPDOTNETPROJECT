@@ -1,0 +1,219 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HomePage.master.cs" Inherits="HomePage" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 100%;
+            background-color: #99FFCC;
+        }
+        #Image3
+        {
+        	float:left;
+        }
+        .style3
+        {
+            width: 286px;
+            height: 79px;
+        }
+        .style4
+        {
+            text-align: center;
+        }
+        .style5
+        {
+            width: 286px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #ImageButton3
+        {
+        	float:left;
+        }
+        .style6
+        {
+            height: 79px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="style1" 
+            style="border: thin solid #C0C0C0; background-color: #C0C0C0;">
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td colspan="3" rowspan="2">
+                    <table class="style2">
+                        <tr>
+                            <td class="style3">
+                                <asp:Image ID="Image3" runat="server" Height="75px" Width="285px" />
+                            </td>
+                            <td class="style6">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                24x7Hours Support -
+                                <asp:LinkButton ID="LinkButton1" runat="server">Contact Us</asp:LinkButton>
+&nbsp; |&nbsp;
+                                <asp:LinkButton ID="LinkButton2" runat="server">Home</asp:LinkButton>
+&nbsp; |&nbsp;
+                                <asp:LinkButton ID="LinkButton3" runat="server">Login</asp:LinkButton>
+&nbsp; |
+                                <asp:LinkButton ID="LinkButton4" runat="server">SignUp</asp:LinkButton>
+&nbsp; |&nbsp;
+                                <asp:LinkButton ID="LinkButton5" runat="server">Admin Login</asp:LinkButton>
+&nbsp; |&nbsp;
+                                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:LinkButton ID="LinkButton6" runat="server">Account</asp:LinkButton>
+&nbsp; |&nbsp;
+                                <asp:LinkButton ID="LinkButton7" runat="server">WishList</asp:LinkButton>
+&nbsp; |&nbsp;
+                                <asp:LinkButton ID="LinkButton8" runat="server">Track Order</asp:LinkButton>
+                            </td>
+                            <td class="style6">
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="style5" style="border: thin solid #800000">
+                                PRODUCT CATEGORIES&nbsp;
+                                </td>
+                            <td style="border: thin solid #800000">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:TextBox ID="TextBox1" runat="server" Height="26px" Width="334px"></asp:TextBox>
+&nbsp;&nbsp;
+                                <asp:DropDownList ID="DropDownList1" runat="server" Width="86px">
+                                </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" 
+                                    Text="SEARCH IN ITHIS CATEGORY" />
+&nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td bgcolor="#CCFFFF" style="width:296px">
+                    <asp:Menu ID="Menu2" runat="server" Height="206px" Width="296px" 
+                        BackColor="#FF6600" ForeColor="White" BorderColor="Maroon" 
+                        BorderStyle="Solid" BorderWidth="4px">
+                        <Items>
+                            <asp:MenuItem Text="CLOTHING" Value="CLOTHING"></asp:MenuItem>
+                            <asp:MenuItem Text="FOOTWEAR" Value="FOOTWEAR"></asp:MenuItem>
+                            <asp:MenuItem Text="WATCHES" Value="WATCHES"></asp:MenuItem>
+                            <asp:MenuItem Text="BAGS , WALLETS &amp; BELTS " 
+                                Value="BAGS , WALLETS &amp; BELTS "></asp:MenuItem>
+                            <asp:MenuItem Text="MOBILES &amp; TABLETS" Value="MOBILES &amp; TABLETS">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="LAPTOP &amp; ACCESSORIES" Value="LAPTOP &amp; ACCESSORIES">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="CAMERAS" Value="CAMERAS"></asp:MenuItem>
+                            <asp:MenuItem Text="AUDIO PLYERS &amp; SPEAKERS" 
+                                Value="AUDIO PLYERS &amp; SPEAKERS"></asp:MenuItem>
+                            <asp:MenuItem Text="SOFTWARES" Value="SOFTWARES"></asp:MenuItem>
+                            <asp:MenuItem Text="BOOKS" Value="BOOKS"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </td>
+                <td bgcolor="#99FFCC" style="border: thin solid #800000">
+                    <asp:ImageButton ID="ImageButton3" runat="server" Height="173px" 
+                        Width="928px" />
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td class="style4" bgcolor="#99FFCC" style="border: thin solid #800000">
+                    <b style="text-align: center">NEWLY ADDED ITEMS</b></td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    <asp:DataList ID="DataList1" runat="server" Width="291px" BackColor="#FFFF99" 
+                        BorderColor="#990000" BorderStyle="Solid" BorderWidth="4px">
+                        <ItemTemplate>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Image ID="Image4" runat="server" Height="96px" Width="114px" />
+                            &nbsp;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:LinkButton ID="LinkButton15" runat="server">LinkButton</asp:LinkButton>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br />
+                            Product Name :&nbsp;
+                            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            Rs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </td>
+                <td>
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder></td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td bgcolor="#99FFCC" class="style4" colspan="3">
+                    <asp:LinkButton ID="LinkButton9" runat="server">LinkButton</asp:LinkButton>
+&nbsp; |&nbsp;
+                    <asp:LinkButton ID="LinkButton10" runat="server">LinkButton</asp:LinkButton>
+&nbsp; |&nbsp;
+                    <asp:LinkButton ID="LinkButton11" runat="server">LinkButton</asp:LinkButton>
+&nbsp; |&nbsp;
+                    <asp:LinkButton ID="LinkButton12" runat="server">LinkButton</asp:LinkButton>
+&nbsp; |&nbsp;
+                    <asp:LinkButton ID="LinkButton13" runat="server">LinkButton</asp:LinkButton>
+&nbsp; |&nbsp;
+                    <asp:LinkButton ID="LinkButton14" runat="server">LinkButton</asp:LinkButton>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
