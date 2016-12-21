@@ -1,0 +1,497 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="Home" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 17px;
+        }
+        .style3
+        {
+            width: 209px;
+        }
+        .fieldset
+        {
+        	border-radius:10px/20px;
+        	height:400px;
+        	width:150px;
+        	box-shadow:5px 5px 5px Grey;
+        }
+        #td1
+        {
+        	border-color:Black;
+        	border-style:solid;
+        	border-radius:10px/20px;
+        	box-shadow:5px 5px 5px Yellow; 
+        }
+        .STYLE1
+{
+display:block;
+border-radius:5px/10px;
+background-color:#33FF66;
+border:thin;
+box-shadow: 15px 25px 15px Grey;
+height:45px;
+width:135px;
+text-align:center;
+float:left;
+position:relative;
+margin-right:7px;
+margin-left:7px;
+border-style:solid;
+border-width:thin;
+}
+.STYLE2
+{
+display:none;
+}
+.STYLE1 li:hover  .STYLE2
+{
+height:45px;
+width:135px;
+border-radius:5px/10px;
+border-style:solid;
+border-width:thin;
+margin-top:25px;
+margin-left:10px;
+margin-right:10px;
+background: #33FF00;
+display:block;
+height:25px;
+box-shadow: 15px 25px 15px Grey;
+color: #330000;
+}
+.ARROW
+{
+color: #330000;
+font-family:Arial, Helvetica, sans-serif;
+text-shadow:5px 5px 5px Grey;
+font-style:italic;
+font-size:15px;
+}
+a:hover
+{
+background-color:#CC66FF;
+color:#00FFFF;
+}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="style1">
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td id="td1">
+                    <asp:Image ID="Image1" runat="server" Height="125px" Width="1456px" 
+                        ImageUrl="~/PIC/2.gif" />
+                </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                <center>
+                <ul class="STYLE1">
+<li>
+<a class="ARROW">HOME</a>
+</li>
+</ul>
+<div>
+<ul class="STYLE1">
+<li >
+<a class="ARROW">ACADEMIC</a>
+<ul class="STYLE2">
+<li >
+<a class="ARROW">RESULTS</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<ul class="STYLE1">
+<li>
+<a class="ARROW">NOTICES & NEWS </a>
+<ul class="STYLE2">
+<li>
+<a class="ARROW">NOTICES</a>
+<li>
+<a class="ARROW">NEWS</a>
+</li>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<ul class="STYLE1">
+<li>
+<a class="ARROW"> COURSES </a>
+<ul class="STYLE2">
+<li >
+<a class="ARROW">SCIENCE</a>
+<li>
+<a class="ARROW">ARTS</a>
+<li>
+<a class="ARROW">VOCATIONAL</a>
+</li>
+</li>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<ul class="STYLE1">
+<li>
+<a class="ARROW">CONTACT US</a>
+</li>
+</ul>
+</div>
+<div>
+<ul class="STYLE1">
+<li>
+<a class="ARROW">GALLERY</a>
+</li>
+</ul>
+</div>
+<ul class="STYLE1">
+<li>
+<a class="ARROW">ADMINISTRATIVE SECTION</a>
+<ul class="STYLE2">
+<li>
+<a class="ARROW">LOGIN</a>
+</li>
+</ul>
+</li>
+</ul>
+</center>
+                    </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td rowspan="9">
+                    <table class="style1">
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td class="style3">
+                                <fieldset style="width: 263px; background-color: #C0C0C0;" class="fieldset">
+                                    <legend style="width: 234px; text-align: center"><b style="text-align: center">NOTICES</b></legend>
+                                    <marquee direction="up" onmouseover="this.stop()" onmouseout="this.start()">
+                                        <asp:HyperLink ID="HyperLink1" runat="server" 
+                                        NavigateUrl="~/Notice_client.aspx?id=1">NOTICE1</asp:HyperLink>
+                                        <br />
+                                        <br />
+                                        <asp:HyperLink ID="HyperLink2" runat="server">HyperLink</asp:HyperLink>
+                                        </marquee>
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                        <br />
+                                        
+                                    </fieldset></td>
+                            <td>
+                                &nbsp;</td>
+                            <td rowspan="9">
+                                <table class="style1">
+                                    <tr>
+                                        <td>
+                                            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder></td>
+                                    </tr>
+                                    </table>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                            <td class="style2">
+                                <fieldset style="width: 272px; height: 376px; background-color: #C0C0C0;" class="fieldset">
+                                    <legend style="width: 250px; text-align: center"><b>ABOUT INSTITUTE</b></legend>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                </fieldset> </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td class="style3">
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                            <td class="style2">
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                <fieldset style="background-color: #C0C0C0" class="fieldset">
+                                    <legend style="width: 238px; text-align: center"><b style="text-align: center">NEWS</b></legend>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                </fieldset></td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                <fieldset style="background-color: #C0C0C0" class="fieldset">
+                                    <legend style="width: 252px; text-align: center"><b style="text-align: center">CONTACT US</b></legend>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                </fieldset></td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                &nbsp;</td>
+                            <td colspan="3">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                &nbsp;</td>
+                            <td colspan="3">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                &nbsp;</td>
+                            <td colspan="3">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                &nbsp;</td>
+                            <td colspan="3">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                &nbsp;</td>
+                            <td colspan="3">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                &nbsp;</td>
+                            <td colspan="3">
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+    </body>
+</html>

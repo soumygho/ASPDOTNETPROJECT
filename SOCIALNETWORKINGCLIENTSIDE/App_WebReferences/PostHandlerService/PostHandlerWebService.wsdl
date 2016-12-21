@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="constructUserWall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClassUserId">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ClassRegistration">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Profname" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Userid" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Doj" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Activated" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Imgurl" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Onlinestatus" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ClassRegistration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="constructUserWallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="constructUserWallResult" type="tns:ArrayOfClassPostDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassPostDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassPostDetails" nillable="true" type="tns:ClassPostDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClassPostDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Nooflikes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Noofcomments" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postcaption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postimageurl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postlink" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Posttype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postlike" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLiked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNewPost" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Imgurl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="shareNewPost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="post" type="tns:ClassPostDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="shareNewPostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="shareNewPostResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="shareNewImagePost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="post" type="tns:ClassPostDetails" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="shareNewImagePostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="shareNewImagePostResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSessionValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSessionValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setSessionValueResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="constructTimeline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="constructTimelineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="constructTimelineResult" type="tns:ArrayOfClassPostDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="post" type="tns:ClassPostDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllCommentsResult" type="tns:ArrayOfClassComment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassComment" nillable="true" type="tns:ClassComment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClassComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Profid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Commentdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Imgurl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAllLikes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="post" type="tns:ClassPostDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllLikesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllLikesResult" type="tns:ArrayOfClassLike" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassLike">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassLike" nillable="true" type="tns:ClassLike" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClassLike">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Profid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Imgurl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPostDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="post" type="tns:ClassPostDetails" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPostDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPostDetailsResult" type="tns:ArrayOfClassPostDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="tns:ClassComment" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="post" type="tns:ClassPostDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertCommentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertLike">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="like" type="tns:ClassLike" />
+            <s:element minOccurs="0" maxOccurs="1" name="post" type="tns:ClassPostDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertLikeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertLikeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="friend" type="tns:ClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClassFriend">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Profid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mutualfriends" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Worksat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profimgurl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dateoffriendship" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="sendRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendRequestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllFriendRequests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllFriendRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllFriendRequestsResult" type="tns:ArrayOfClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassFriend">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassFriend" nillable="true" type="tns:ClassFriend" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="acceptFriendRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="friend" type="tns:ClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="acceptFriendRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="acceptFriendRequestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="friend" type="tns:ClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteRequestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ignoreRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="friend" type="tns:ClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ignoreRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ignoreRequestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllFriendList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllFriendListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllFriendListResult" type="tns:ArrayOfClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isFriend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="friend" type="tns:ClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isFriendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isFriendResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hasFriendRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+            <s:element minOccurs="0" maxOccurs="1" name="friend" type="tns:ClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hasFriendRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hasFriendRequestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSearchResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSearchResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSearchResultResult" type="tns:ArrayOfClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassUserId">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassUserId" nillable="true" type="tns:ClassUserId" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAllNotifications">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllNotificationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllNotificationsResult" type="tns:ArrayOfClassNotification" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassNotification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassNotification" nillable="true" type="tns:ClassNotification" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClassNotification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Postid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sharerid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notificationtext" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notificationtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reciepentid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAllFriends">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllFriendsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllFriendsResult" type="tns:ArrayOfClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllOnlineFriends">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllOnlineFriendsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllOnlineFriendsResult" type="tns:ArrayOfClassFriend" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="constructUserWallSoapIn">
+    <wsdl:part name="parameters" element="tns:constructUserWall" />
+  </wsdl:message>
+  <wsdl:message name="constructUserWallSoapOut">
+    <wsdl:part name="parameters" element="tns:constructUserWallResponse" />
+  </wsdl:message>
+  <wsdl:message name="shareNewPostSoapIn">
+    <wsdl:part name="parameters" element="tns:shareNewPost" />
+  </wsdl:message>
+  <wsdl:message name="shareNewPostSoapOut">
+    <wsdl:part name="parameters" element="tns:shareNewPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="shareNewImagePostSoapIn">
+    <wsdl:part name="parameters" element="tns:shareNewImagePost" />
+  </wsdl:message>
+  <wsdl:message name="shareNewImagePostSoapOut">
+    <wsdl:part name="parameters" element="tns:shareNewImagePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSessionValueSoapIn">
+    <wsdl:part name="parameters" element="tns:setSessionValue" />
+  </wsdl:message>
+  <wsdl:message name="setSessionValueSoapOut">
+    <wsdl:part name="parameters" element="tns:setSessionValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="constructTimelineSoapIn">
+    <wsdl:part name="parameters" element="tns:constructTimeline" />
+  </wsdl:message>
+  <wsdl:message name="constructTimelineSoapOut">
+    <wsdl:part name="parameters" element="tns:constructTimelineResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllComments" />
+  </wsdl:message>
+  <wsdl:message name="getAllCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllLikesSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllLikes" />
+  </wsdl:message>
+  <wsdl:message name="getAllLikesSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllLikesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPostDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPostDetails" />
+  </wsdl:message>
+  <wsdl:message name="getPostDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPostDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:insertComment" />
+  </wsdl:message>
+  <wsdl:message name="insertCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:insertCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertLikeSoapIn">
+    <wsdl:part name="parameters" element="tns:insertLike" />
+  </wsdl:message>
+  <wsdl:message name="insertLikeSoapOut">
+    <wsdl:part name="parameters" element="tns:insertLikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:sendRequest" />
+  </wsdl:message>
+  <wsdl:message name="sendRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:sendRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllFriendRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllFriendRequests" />
+  </wsdl:message>
+  <wsdl:message name="getAllFriendRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllFriendRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="acceptFriendRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:acceptFriendRequest" />
+  </wsdl:message>
+  <wsdl:message name="acceptFriendRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:acceptFriendRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ignoreRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:ignoreRequest" />
+  </wsdl:message>
+  <wsdl:message name="ignoreRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:ignoreRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllFriendListSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllFriendList" />
+  </wsdl:message>
+  <wsdl:message name="getAllFriendListSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllFriendListResponse" />
+  </wsdl:message>
+  <wsdl:message name="isFriendSoapIn">
+    <wsdl:part name="parameters" element="tns:isFriend" />
+  </wsdl:message>
+  <wsdl:message name="isFriendSoapOut">
+    <wsdl:part name="parameters" element="tns:isFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="hasFriendRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:hasFriendRequest" />
+  </wsdl:message>
+  <wsdl:message name="hasFriendRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:hasFriendRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSearchResultSoapIn">
+    <wsdl:part name="parameters" element="tns:getSearchResult" />
+  </wsdl:message>
+  <wsdl:message name="getSearchResultSoapOut">
+    <wsdl:part name="parameters" element="tns:getSearchResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllNotificationsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllNotifications" />
+  </wsdl:message>
+  <wsdl:message name="getAllNotificationsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllFriendsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllFriends" />
+  </wsdl:message>
+  <wsdl:message name="getAllFriendsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllFriendsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllOnlineFriendsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllOnlineFriends" />
+  </wsdl:message>
+  <wsdl:message name="getAllOnlineFriendsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllOnlineFriendsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PostHandlerWebServiceSoap">
+    <wsdl:operation name="constructUserWall">
+      <wsdl:input message="tns:constructUserWallSoapIn" />
+      <wsdl:output message="tns:constructUserWallSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="shareNewPost">
+      <wsdl:input message="tns:shareNewPostSoapIn" />
+      <wsdl:output message="tns:shareNewPostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="shareNewImagePost">
+      <wsdl:input message="tns:shareNewImagePostSoapIn" />
+      <wsdl:output message="tns:shareNewImagePostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSessionValue">
+      <wsdl:input message="tns:setSessionValueSoapIn" />
+      <wsdl:output message="tns:setSessionValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="constructTimeline">
+      <wsdl:input message="tns:constructTimelineSoapIn" />
+      <wsdl:output message="tns:constructTimelineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllComments">
+      <wsdl:input message="tns:getAllCommentsSoapIn" />
+      <wsdl:output message="tns:getAllCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllLikes">
+      <wsdl:input message="tns:getAllLikesSoapIn" />
+      <wsdl:output message="tns:getAllLikesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPostDetails">
+      <wsdl:input message="tns:getPostDetailsSoapIn" />
+      <wsdl:output message="tns:getPostDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertComment">
+      <wsdl:input message="tns:insertCommentSoapIn" />
+      <wsdl:output message="tns:insertCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertLike">
+      <wsdl:input message="tns:insertLikeSoapIn" />
+      <wsdl:output message="tns:insertLikeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendRequest">
+      <wsdl:input message="tns:sendRequestSoapIn" />
+      <wsdl:output message="tns:sendRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriendRequests">
+      <wsdl:input message="tns:getAllFriendRequestsSoapIn" />
+      <wsdl:output message="tns:getAllFriendRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="acceptFriendRequest">
+      <wsdl:input message="tns:acceptFriendRequestSoapIn" />
+      <wsdl:output message="tns:acceptFriendRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteRequest">
+      <wsdl:input message="tns:deleteRequestSoapIn" />
+      <wsdl:output message="tns:deleteRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ignoreRequest">
+      <wsdl:input message="tns:ignoreRequestSoapIn" />
+      <wsdl:output message="tns:ignoreRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriendList">
+      <wsdl:input message="tns:getAllFriendListSoapIn" />
+      <wsdl:output message="tns:getAllFriendListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isFriend">
+      <wsdl:input message="tns:isFriendSoapIn" />
+      <wsdl:output message="tns:isFriendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hasFriendRequest">
+      <wsdl:input message="tns:hasFriendRequestSoapIn" />
+      <wsdl:output message="tns:hasFriendRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSearchResult">
+      <wsdl:input message="tns:getSearchResultSoapIn" />
+      <wsdl:output message="tns:getSearchResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllNotifications">
+      <wsdl:input message="tns:getAllNotificationsSoapIn" />
+      <wsdl:output message="tns:getAllNotificationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriends">
+      <wsdl:input message="tns:getAllFriendsSoapIn" />
+      <wsdl:output message="tns:getAllFriendsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOnlineFriends">
+      <wsdl:input message="tns:getAllOnlineFriendsSoapIn" />
+      <wsdl:output message="tns:getAllOnlineFriendsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PostHandlerWebServiceSoap" type="tns:PostHandlerWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="constructUserWall">
+      <soap:operation soapAction="http://tempuri.org/constructUserWall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="shareNewPost">
+      <soap:operation soapAction="http://tempuri.org/shareNewPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="shareNewImagePost">
+      <soap:operation soapAction="http://tempuri.org/shareNewImagePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSessionValue">
+      <soap:operation soapAction="http://tempuri.org/setSessionValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="constructTimeline">
+      <soap:operation soapAction="http://tempuri.org/constructTimeline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllComments">
+      <soap:operation soapAction="http://tempuri.org/getAllComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLikes">
+      <soap:operation soapAction="http://tempuri.org/getAllLikes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPostDetails">
+      <soap:operation soapAction="http://tempuri.org/getPostDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertComment">
+      <soap:operation soapAction="http://tempuri.org/insertComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertLike">
+      <soap:operation soapAction="http://tempuri.org/insertLike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequest">
+      <soap:operation soapAction="http://tempuri.org/sendRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriendRequests">
+      <soap:operation soapAction="http://tempuri.org/getAllFriendRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptFriendRequest">
+      <soap:operation soapAction="http://tempuri.org/acceptFriendRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRequest">
+      <soap:operation soapAction="http://tempuri.org/deleteRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ignoreRequest">
+      <soap:operation soapAction="http://tempuri.org/ignoreRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriendList">
+      <soap:operation soapAction="http://tempuri.org/getAllFriendList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isFriend">
+      <soap:operation soapAction="http://tempuri.org/isFriend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasFriendRequest">
+      <soap:operation soapAction="http://tempuri.org/hasFriendRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSearchResult">
+      <soap:operation soapAction="http://tempuri.org/getSearchResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllNotifications">
+      <soap:operation soapAction="http://tempuri.org/getAllNotifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriends">
+      <soap:operation soapAction="http://tempuri.org/getAllFriends" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllOnlineFriends">
+      <soap:operation soapAction="http://tempuri.org/getAllOnlineFriends" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PostHandlerWebServiceSoap12" type="tns:PostHandlerWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="constructUserWall">
+      <soap12:operation soapAction="http://tempuri.org/constructUserWall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="shareNewPost">
+      <soap12:operation soapAction="http://tempuri.org/shareNewPost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="shareNewImagePost">
+      <soap12:operation soapAction="http://tempuri.org/shareNewImagePost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSessionValue">
+      <soap12:operation soapAction="http://tempuri.org/setSessionValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="constructTimeline">
+      <soap12:operation soapAction="http://tempuri.org/constructTimeline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllComments">
+      <soap12:operation soapAction="http://tempuri.org/getAllComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLikes">
+      <soap12:operation soapAction="http://tempuri.org/getAllLikes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPostDetails">
+      <soap12:operation soapAction="http://tempuri.org/getPostDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertComment">
+      <soap12:operation soapAction="http://tempuri.org/insertComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertLike">
+      <soap12:operation soapAction="http://tempuri.org/insertLike" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequest">
+      <soap12:operation soapAction="http://tempuri.org/sendRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriendRequests">
+      <soap12:operation soapAction="http://tempuri.org/getAllFriendRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptFriendRequest">
+      <soap12:operation soapAction="http://tempuri.org/acceptFriendRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRequest">
+      <soap12:operation soapAction="http://tempuri.org/deleteRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ignoreRequest">
+      <soap12:operation soapAction="http://tempuri.org/ignoreRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriendList">
+      <soap12:operation soapAction="http://tempuri.org/getAllFriendList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isFriend">
+      <soap12:operation soapAction="http://tempuri.org/isFriend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasFriendRequest">
+      <soap12:operation soapAction="http://tempuri.org/hasFriendRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSearchResult">
+      <soap12:operation soapAction="http://tempuri.org/getSearchResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllNotifications">
+      <soap12:operation soapAction="http://tempuri.org/getAllNotifications" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFriends">
+      <soap12:operation soapAction="http://tempuri.org/getAllFriends" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllOnlineFriends">
+      <soap12:operation soapAction="http://tempuri.org/getAllOnlineFriends" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PostHandlerWebService">
+    <wsdl:port name="PostHandlerWebServiceSoap" binding="tns:PostHandlerWebServiceSoap">
+      <soap:address location="http://localhost/SOCIALNETWORKING/PostHandlerWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PostHandlerWebServiceSoap12" binding="tns:PostHandlerWebServiceSoap12">
+      <soap12:address location="http://localhost/SOCIALNETWORKING/PostHandlerWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+public partial class gallery : System.Web.UI.Page
+{
+    dbconnection database = new dbconnection();
+    AjaxControlToolkit.Slide[] slides;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            int count = 0;
+            database.con.Close();
+            database.cmd.CommandText = "select * from gallery";
+            database.cmd.Connection = database.con;
+            database.dr = database.cmd.ExecuteReader();
+            if (database.dr.HasRows)
+            {
+                while (database.dr.Read())
+                {
+                    count++;
+                }
+            }
+            slides =new  AjaxControlToolkit.Slide[count];
+            database.cmd.CommandText = "select * from gallery";
+            database.dr = database.cmd.ExecuteReader();
+            if (database.dr.HasRows)
+            {
+                while (database.dr.Read())
+                {
+
+                }
+            }
+        }
+        catch (Exception ee)
+        {
+        }
+        finally
+        {
+        }
+    }
+
+    [System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+    public static AjaxControlToolkit.Slide[] GetSlides(string contextKey)
+    {
+        return default(AjaxControlToolkit.Slide[]);
+    }
+}

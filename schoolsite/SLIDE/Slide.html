@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type='text/javascript'>
+var slideArray = new Array();
+slideArray[0] = new Image();
+slideArray[1] = new Image();
+slideArray[2] = new Image();
+slideArray[3] = new Image();
+slideArray[4] = new Image();
+slideArray[5] = new Image();
+slideArray[6] = new Image();
+slideArray[0].src = "1.JPG";
+slideArray[1].src = "2.JPG";
+slideArray[2].src = "3.JPG";
+slideArray[3].src = "4.JPG";
+slideArray[4].src = "5.JPG";
+slideArray[5].src = "6.JPG";
+slideArray[6].src = "7.JPG";
+
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return ;
+ document.getElementById('slide').src = slideArray[step].src ;
+ if (step<6)
+  step++;
+ else
+  step=0 ;
+ //call function "slideit()" every 2.5 seconds
+ setTimeout("slideit()",2500)
+}
+
+
+</script>
+</head>
+<body onload = "slideit()">
+<img src = '1.JPG' id = 'slide' width = 475 height = 256/>
+</body>
+</html>

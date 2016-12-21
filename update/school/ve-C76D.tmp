@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Windows.Forms;
+using System.Drawing;
+
+public partial class HomePage : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //notice hyperlink add
+        dbconnection db = new dbconnection();
+        try
+        {
+            db.con.Open();
+            db.cmd.CommandText = "select * from notice";
+            db.cmd.Connection = db.con;
+            db.dr = db.cmd.ExecuteReader();
+            int i = 1;
+            if (db.dr.HasRows)
+            {
+               // HtmlTable noticeTable = notices;
+                while (db.dr.Read())
+                {
+                    HyperLink link = new HyperLink();
+                    link.NavigateUrl = "~/Notice_client.aspx"+"?"+"id="+db.dr["id"].ToString();
+                    System.Web.UI.WebControls.Label num = new System.Web.UI.WebControls.Label();
+                    System.Web.UI.WebControls.Label br = new System.Web.UI.WebControls.Label();
+                    br.Text = "<br/><br/>";
+                    num.Text = i.ToString()+".";
+                    link.Text = db.dr["sub"].ToString()+"dated" + db.dr["date"].ToString();
+                    i++;
+                    link.ForeColor = Color.Red;
+                    Panel1.Controls.Add(num);
+                    Panel1.Controls.Add(link);
+                    Panel1.Controls.Add(br);
+                }
+            }
+        }
+        catch (Exception m)
+        {
+            MessageBox.Show("Error occured:" + m.Message);
+        }
+        finally
+        {
+            db.con.Close();
+        }
+    }
+
+    [System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+    public static AjaxControlToolkit.Slide[] GetSlides(string contextKey)
+    {
+        AjaxControlToolkit.Slide[] slides = new AjaxControlToolkit.Slide[7];
+        slides[0] = new AjaxControlToolkit.Slide("SLIDE/1.JPG", "SCHOOL BUILDING FRONT VIEW", "VIEW_FRONT");
+        slides[1] = new AjaxControlToolkit.Slide("SLIDE/2.jpg", "HOSTEL BUILDING FRONT VIEW", "VIEW_HOSTEL_FRONT");
+        slides[2] = new AjaxControlToolkit.Slide("SLIDE/3.jpg", "PLAYGROUND", "a");
+        slides[3] = new AjaxControlToolkit.Slide("SLIDE/4.jpg", "OLD BUILDING", "b");
+        slides[4] = new AjaxControlToolkit.Slide("SLIDE/5.jpg", "COMPUTER LAB", "c");
+        slides[5] = new AjaxControlToolkit.Slide("SLIDE/6.jpg", "FIRST FLOOR OF THE MAIN BUILDING", "d");
+        slides[6] = new AjaxControlToolkit.Slide("SLIDE/7.jpg", "FIRST FLOOR OF THE MAIN BUILDING", "e");
+        return slides;
+    }
+}

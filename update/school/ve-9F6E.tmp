@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.IO;
+
+public partial class TEACHERS_DETAILS : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        String trade = Request.QueryString["trade"].ToString();
+        String path = "";
+        String name = "";
+        String qualification = "";
+        dbconnection database = new dbconnection();
+        try
+        {
+            database.con.Open();
+            database.cmd.CommandText = "select * from teacher where trade='"+trade+"'";
+            database.cmd.Connection = database.con;
+            database.dr = database.cmd.ExecuteReader();
+            if (database.dr.HasRows)
+            {
+                while (database.dr.Read())
+                {
+                    Image img = new Image();
+                    System.Web.UI.WebControls.Label label = new System.Web.UI.WebControls.Label();
+                    System.Web.UI.WebControls.Label label1 = new System.Web.UI.WebControls.Label();
+                    img.Height = 120;
+                    img.Width = 140;
+                    img.BorderWidth = 2;
+                    label1.Text = "&nbsp;&nbsp;";
+                    label.Text = "TRADE : "+database.dr["trade"].ToString()+"<br/>"+"NAME : "+database.dr["name"].ToString()+"<br>"+"QUALIFICATION : "+database.dr["qualification"].ToString()+"<br/>";
+                    img.BorderStyle = System.Web.UI.WebControls.BorderStyle.Solid;
+                    String info = "~/TEACHER PIC/"+database.dr["path"].ToString();
+                    img.ImageUrl = info;
+                    Panel1.Controls.Add(img);
+                }
+            }
+            
+        }
+        catch (Exception ee)
+        {
+            MessageBox.Show(ee.Message);
+        }
+        finally
+        {
+            database.con.Close();
+        }
+    }
+    protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+    {
+
+    }
+}

@@ -1,0 +1,422 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HomePage.master.cs" Inherits="HomePage" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 900px;
+        }
+        .style2
+        {
+            height: 23px;
+            text-align: center;
+        }
+        .style3
+        {
+            width: 161px;
+        }
+        #sddm
+{ 
+	margin: 0;
+ padding: 0;
+ z-index: 30
+ }
+
+#sddm li
+{ 
+	margin: 0;
+ padding: 0;
+ list-style: none;
+ float: left;
+ font: bold 11px arial;
+            width: 120px;
+        }
+
+#sddm li a
+{
+	 display: block;
+ margin: 0 1px 0 0;
+ padding: 4px 10px;
+ width: 120px;
+ background: #5970B2;
+ color: #FFF;
+ text-align: center;
+ text-decoration: none
+        }
+
+#sddm li a:hover
+{ 
+	background: #49A3FF
+	}
+
+#sddm div
+
+{ 
+	position: absolute;
+ visibility: hidden;
+ margin: 0;
+ padding: 0;
+ background: #EAEBD8;
+ border: 1px solid #5970B2
+ }
+
+ #sddm div a
+ { 
+ 	position: relative;
+  display: block;
+  margin: 0;
+  padding: 5px 10px;
+  width: auto;
+  white-space: nowrap;
+  text-align: left;
+  text-decoration: none;
+  background: #EAEBD8;
+  color: #2875DE;
+  font: 11px arial
+  }
+
+ #sddm div a:hover
+ { 
+ 	background: #49A3FF;
+  color: #FFF
+  }
+
+    </style>
+    <script type="text/javascript">
+    var timeout = 500;
+
+var closetimer = 0;
+var ddmenuitem = 0;
+
+// open hidden layer
+function mopen(id)
+
+{ 
+ // cancel close timer
+ mcancelclosetime();
+
+ // close old layer
+ if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+ // get new layer and show it
+ ddmenuitem = document.getElementById(id);
+ ddmenuitem.style.visibility = 'visible';
+
+}
+
+// close showed layer
+function mclose()
+{
+ if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+
+{
+ closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+ if(closetimer)
+ {
+  window.clearTimeout(closetimer);
+  closetimer = null;
+ }
+}
+
+
+// close layer when click-out
+document.onclick = mclose;
+</script> 
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="style1" 
+            style="background-color: #C0C0C0; ">
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;</td>
+                <td colspan="5" rowspan="5">
+                    <asp:Image ID="Image1" runat="server" Height="124px" Width="875px" 
+                        ImageUrl="~/PIC/cover1.png" />
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2">
+                    </td>
+                <td class="style2" colspan="5">
+                    <ul id="sddm">
+                    <li><a href = "HomePage.aspx">HOME</a></li>
+
+    <li><a href="#" 
+        onmouseover="mopen('m1')" 
+        onmouseout="mclosetime()">ACADEMIC SECTION</a>
+
+        <div id="m1" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+        <a href="result.aspx">RESULT</a>
+        <a href="TEACHER_DETAILS.aspx?trade=science">FACULTY</a>
+
+        <a href="#">STUDENT ACTIVITY</a>
+        </div>
+    </li>
+    <li><a href="#" 
+        onmouseover="mopen('m2')" 
+        onmouseout="mclosetime()">NOTICE AND NEWS</a>
+
+        <div id="m2" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+        <a href="noticedetails.aspx">NOTICE</a>
+
+        <a href="NEWS.aspx">NEWS</a>
+        </div>
+    </li>
+
+    <li><a href="#">GALLERY</a></li>
+    <li><a href="#">ADDMISSION</a></li>
+<li><a href="Administrative_login.aspx">ADMIN</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+
+                    </td>
+                <td class="style2">
+                    </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td colspan="5" rowspan="24" 
+                    
+                    
+                    style="border: thin solid #000000; position: static; left: 20px; right: 280px;" >
+                     
+                   
+                     
+                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                     </asp:ContentPlaceHolder>
+                     
+                   
+                     
+                     </td>
+        
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+      
+    </div>
+    </form>
+     </body>
+</html>

@@ -1,0 +1,75 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Windows.Forms;
+using System.IO;
+
+public partial class uploadteacherdetails : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["userid"] == null)
+        {
+            Response.Redirect("~/Administrative_login.aspx");
+        }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        dbconnection cn = new dbconnection();
+        bool flag = false;
+        String path;
+        if (FileUpload1.HasFile)
+        {
+            try
+            {
+                String ext = Path.GetExtension(FileUpload1.FileName);
+                 path = name.Text + DateTime.Today.ToShortDateString().ToString().Replace('/', '_')+ext; 
+                FileUpload1.SaveAs(Server.MapPath("~/TEACHER PIC") + "\\" + path);
+                MessageBox.Show("SUCCESSFULLY UPLOADED!!!");
+                flag = true;
+                if (flag)
+                {
+                    try
+                    {
+                        cn.con.Open();
+                        cn.cmd.CommandText = "insert into teacher (path,trade,name,qualification) values('" + path + "','" + trade.Text + "','" + name.Text + "','"+qualification.Text+"')";
+                        cn.cmd.Connection = cn.con;
+                        cn.cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show("Error occured:" + ee.Message);
+                    }
+                    finally
+                    {
+                        cn.con.Close();
+                    }
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("ERROR OCCURED: " + ee.Message);
+            }
+
+        }
+        else
+        {
+            MessageBox.Show("NO FILE SELECTED!!");
+        }
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Session.Clear();
+        Response.Redirect("~/Administrative_login.aspx");
+    }
+}

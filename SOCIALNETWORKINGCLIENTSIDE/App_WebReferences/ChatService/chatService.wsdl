@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="sendSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chat" type="tns:ClassChatDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClassChatDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Senderid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Recieverid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chatdate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Isdelivered" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chatid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Senderprofimgurl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Recieverprofimgurl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SenaderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecieverName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MessageId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="sendSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendSmsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chat" type="tns:ClassChatDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllMessageResult" type="tns:ArrayOfClassChatDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassChatDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassChatDetails" nillable="true" type="tns:ClassChatDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getNewMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="tns:ClassUserId" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClassUserId">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ClassRegistration">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Profname" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Userid" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Doj" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Activated" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Imgurl" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Onlinestatus" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ClassRegistration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getNewMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNewMessagesResult" type="tns:ArrayOfClassChatDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="sendSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:sendSms" />
+  </wsdl:message>
+  <wsdl:message name="sendSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:sendSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllMessage" />
+  </wsdl:message>
+  <wsdl:message name="getAllMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNewMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:getNewMessages" />
+  </wsdl:message>
+  <wsdl:message name="getNewMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:getNewMessagesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ChatServiceSoap">
+    <wsdl:operation name="sendSms">
+      <wsdl:input message="tns:sendSmsSoapIn" />
+      <wsdl:output message="tns:sendSmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMessage">
+      <wsdl:input message="tns:getAllMessageSoapIn" />
+      <wsdl:output message="tns:getAllMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewMessages">
+      <wsdl:input message="tns:getNewMessagesSoapIn" />
+      <wsdl:output message="tns:getNewMessagesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ChatServiceSoap" type="tns:ChatServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendSms">
+      <soap:operation soapAction="http://tempuri.org/sendSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMessage">
+      <soap:operation soapAction="http://tempuri.org/getAllMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewMessages">
+      <soap:operation soapAction="http://tempuri.org/getNewMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ChatServiceSoap12" type="tns:ChatServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendSms">
+      <soap12:operation soapAction="http://tempuri.org/sendSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMessage">
+      <soap12:operation soapAction="http://tempuri.org/getAllMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewMessages">
+      <soap12:operation soapAction="http://tempuri.org/getNewMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChatService">
+    <wsdl:port name="ChatServiceSoap" binding="tns:ChatServiceSoap">
+      <soap:address location="http://localhost/SOCIALNETWORKING/chatService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ChatServiceSoap12" binding="tns:ChatServiceSoap12">
+      <soap12:address location="http://localhost/SOCIALNETWORKING/chatService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,296 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Home.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="_Default" Title="Untitled Page" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .style4
+        {            text-align: center;
+        }
+        .style5
+        {
+            text-align: center;
+        height: 25px;
+            font-weight: bold;
+        }
+        .style6
+        {
+            text-align: center;
+            font-weight: bold;
+        }
+         #div1
+        {
+        	border-color:Navy;
+        	border-radius:10px/20px;
+        	border-width:thin;
+        	box-shadow:5px 5px 5px Grey;
+        	
+        }
+        #Image4
+        {
+        	float: right;
+        	margin-left: 15px;
+        	margin-bottom:15px;
+        	margin-right:15px;
+        	margin-top:15px;
+        }
+        </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <table   style="height: 1146px; width: 87%;" id="div1">
+        <tr>
+            <td class="style4">
+                <asp:Image ID="Image2" runat="server" Height="185px" Width="495px" 
+                    style="text-align: center" />
+                <cc1:SlideShowExtender ID="Image2_SlideShowExtender" runat="server" 
+                    Enabled="True" SlideShowServiceMethod="GetSlides" SlideShowServicePath="" 
+                    TargetControlID="Image2" UseContextKey="True" Loop="true" AutoPlay="True" 
+                    PlayInterval="1000">
+                </cc1:SlideShowExtender>
+            </td>
+        </tr>
+        <tr>
+            <td class="style4">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+            </td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style5" colspan="3" 
+                style="font-family: Aharoni; background-color: #FFFF00">
+                &nbsp;তুতরাঙ্গা অঞ্ছল শিক্ষ্যানিকেতন আপনাকে স্বাগত জানায়&nbsp;</td>>
+        </tr>
+        <tr>
+            <td class="style6" 
+                
+                
+                style="font-family: Aharoni; font-size: medium; text-decoration: blink; background-color: #C0C0C0">
+                প্রধান শিক্ষকের আবেদন </td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4" rowspan="31">
+                <fieldset style="border: thin solid Green; background-color:#CCCCCC; border-redius:50px 25px; height: 833px; width: 691px;">
+                    <div style="height: 677px">
+                        <table class="style1" style="height: 181px">
+                            <tr>
+                                <td>
+                    <asp:Image ID="Image4" runat="server" Height="156px" ImageUrl="~/PIC/head.gif" 
+                        Width="171px" />
+                                    আমাদের প্রিয় বিদ্যালয় ১৯৫৬ সালের ১লা জানুয়ারি থেকে পথ চলা আরম্ভ করেছে।১৯৭১ সালে 
+                                    মাধ্যমিক বিদ্যালয়ের স্বীকৃতি লাভ করেছে এবং ২০০৫-০৬ শিক্ষাবর্ষে উচ্চমাধ্যমিক 
+                                    বিদ্যালয়ে উন্নীত হওয়ার মধ্য দিয়ে সামাজিক দায়বদ্ধতার ক্ষেত্রটিতেও প্রশস্ত হয়েছে।এ 
+                                    সবের মুলে রয়েছে এলাকার জনসাধারনের আশীর্বাদ ও সহযোগিতা,স্থানীয় প্রশাসনের 
+                                    সহযোগিতা,স্থানীয় পঞ্চায়েত প্রশাসন থেকে শুরু করে জেলা প্রশাসন সহ রাজ্য প্রশাসন 
+                                    এবং বিভিন্ন রাজনৈতিক দল ও বিভিন্ন সামাজিক প্রতিষ্ঠানের সম্মিলিত উদ্যোগ ও 
+                                    সহযোগিতা।গত বছর প্রতিবেদনে উল্লিখিত হয়েছিল যে,প্রতিবছর ছাত্র-ছাত্রি সংখ্যা 
+                                    বৃদ্ধি পাওয়ার সাথে সাথে খুব দ্রুততার সাথে প্রয়োজনীয় শ্রেণীকক্ষ , বিজ্ঞান ল্যাব, 
+                                    কম্পিউটার ল্যাব , ভূগোল ল্যাব ও নিউট্রিশন ল্যাব নির্মাণ খুবই আবশ্যিক বিষয় হয়ে 
+                                    পরে।আমরা কম্পিউটার ল্যাব কে উন্নত করতে পেরেছি।<br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+                        </table>
+&nbsp;&nbsp;&nbsp; </div>
+                </fieldset></td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+    </table>
+</asp:Content>
+
