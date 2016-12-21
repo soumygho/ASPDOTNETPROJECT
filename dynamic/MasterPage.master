@@ -1,0 +1,252 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            border: 1px solid #000000;
+            background-color: #00FFFF;
+        }
+        .aligncenter
+        {
+        	text-align:center ;
+        }
+        .style2
+        {
+            width: 216px;
+        }
+        .style3
+        {
+            width: 282px;
+        }
+        .style4
+        {
+            width: 48px;
+        }
+        .style5
+        {
+            width: 48px;
+            height: 24px;
+        }
+        .style6
+        {
+            width: 216px;
+            height: 24px;
+        }
+        .style7
+        {
+            height: 24px;
+        }
+        .style8
+        {
+            width: 282px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="style1">
+            <tr>
+                <td class="style4">
+                </td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td colspan="3" rowspan="2">
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td colspan="5" rowspan="2">
+                    <asp:Menu ID="Menu1" runat="server">
+                    </asp:Menu>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td rowspan="6" class="style2">
+                  <fieldset>
+                 <legend  class="aligncenter"> <b>NOTICE</b></legend>
+                  </fieldset>&nbsp;
+                  </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td rowspan="6" class="style3">
+                    <fieldset>
+                    <legend class="aligncenter"><b>LOGIN</b></legend>
+                    </fieldset>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;</td>
+                <td colspan="3" rowspan="9">
+                      <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <p style="height: 144px; width: 650px; margin-left: 42px">
+            </p>
+        
+        </asp:ContentPlaceHolder>
+                    </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    &nbsp;</td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style5">
+                    &nbsp;</td>
+                <td class="style6">
+                    &nbsp;</td>
+                <td class="style7">
+                    </td>
+                <td class="style7">
+                    </td>
+                <td class="style7">
+                    </td>
+                <td class="style8">
+                    </td>
+                <td class="style7">
+                    </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+    </div>
+    </form>
+</body>
+</html>
