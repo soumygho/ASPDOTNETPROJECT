@@ -1,0 +1,5 @@
+E:\MY PROJECTS\ASP.NET PROJECT\PHPwebserviceDemo\PHPwebserviceDemo\bin\PHPwebserviceDemo.dll
+E:\MY PROJECTS\ASP.NET PROJECT\PHPwebserviceDemo\PHPwebserviceDemo\bin\PHPwebserviceDemo.pdb
+E:\MY PROJECTS\ASP.NET PROJECT\PHPwebserviceDemo\PHPwebserviceDemo\obj\Debug\ResolveAssemblyReference.cache
+E:\MY PROJECTS\ASP.NET PROJECT\PHPwebserviceDemo\PHPwebserviceDemo\obj\Debug\PHPwebserviceDemo.dll
+E:\MY PROJECTS\ASP.NET PROJECT\PHPwebserviceDemo\PHPwebserviceDemo\obj\Debug\PHPwebserviceDemo.pdb

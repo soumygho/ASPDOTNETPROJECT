@@ -1,0 +1,5 @@
+E:\MY PROJECTS\ASP.NET PROJECT\OffsetLibrary\offsetLibrary\offsetLibrary\bin\x86\Debug\offsetLibrary.dll
+E:\MY PROJECTS\ASP.NET PROJECT\OffsetLibrary\offsetLibrary\offsetLibrary\bin\x86\Debug\offsetLibrary.pdb
+E:\MY PROJECTS\ASP.NET PROJECT\OffsetLibrary\offsetLibrary\offsetLibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\MY PROJECTS\ASP.NET PROJECT\OffsetLibrary\offsetLibrary\offsetLibrary\obj\x86\Debug\offsetLibrary.dll
+E:\MY PROJECTS\ASP.NET PROJECT\OffsetLibrary\offsetLibrary\offsetLibrary\obj\x86\Debug\offsetLibrary.pdb

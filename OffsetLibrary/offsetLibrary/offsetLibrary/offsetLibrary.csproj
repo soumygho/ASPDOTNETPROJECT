@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{303ABA80-3F4E-432D-A985-E996C250821D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>offsetLibrary</RootNamespace>
+    <AssemblyName>offsetLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActualCost.cs" />
+    <Compile Include="ActualCostOperation.cs" />
+    <Compile Include="AdminTransaction.cs" />
+    <Compile Include="AdminTransactionReport.cs" />
+    <Compile Include="AdminTrnsactionOperation.cs" />
+    <Compile Include="Bill.cs" />
+    <Compile Include="BillOperation.cs" />
+    <Compile Include="BillPaymentDetails.cs" />
+    <Compile Include="BillPaymentDetailsOperation.cs" />
+    <Compile Include="BindingCost.cs" />
+    <Compile Include="BindingCostOperation.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="CategoryOperation.cs" />
+    <Compile Include="CostTable.cs" />
+    <Compile Include="CreateDateClass.cs" />
+    <Compile Include="CustomerDetails.cs" />
+    <Compile Include="CustomerOperation.cs" />
+    <Compile Include="DatabaseOperation.cs" />
+    <Compile Include="DbConnection.cs" />
+    <Compile Include="DigitalPrintingCost.cs" />
+    <Compile Include="DigitalPrintingOperation.cs" />
+    <Compile Include="Dtp.cs" />
+    <Compile Include="DtpOperation.cs" />
+    <Compile Include="Flex.cs" />
+    <Compile Include="FlexOperation.cs" />
+    <Compile Include="Identitycard.cs" />
+    <Compile Include="IdentitycardOperation.cs" />
+    <Compile Include="OrderDetails.cs" />
+    <Compile Include="OrderDetailsReport.cs" />
+    <Compile Include="PaperDetails.cs" />
+    <Compile Include="PaperDetailsOperation.cs" />
+    <Compile Include="PaperSize.cs" />
+    <Compile Include="PaperSizeOperation.cs" />
+    <Compile Include="PassportPhoto.cs" />
+    <Compile Include="PasspostPhotoOperation.cs" />
+    <Compile Include="PrintCost.cs" />
+    <Compile Include="PrintCostOperation.cs" />
+    <Compile Include="ProfitReport.cs" />
+    <Compile Include="ProfitTable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quotation.cs" />
+    <Compile Include="QuotationOperation.cs" />
+    <Compile Include="quotationReport.cs" />
+    <Compile Include="Receipt.cs" />
+    <Compile Include="ReceiptOperation.cs" />
+    <Compile Include="RubberStamp.cs" />
+    <Compile Include="RubberStampOperation.cs" />
+    <Compile Include="SellReport.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="UserTransaction.cs" />
+    <Compile Include="UserTransactionReport.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

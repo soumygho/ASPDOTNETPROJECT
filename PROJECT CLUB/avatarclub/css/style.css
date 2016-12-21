@@ -1,0 +1,43 @@
+body{backface-visibility:hidden;font-family:Verdana,Geneva,sans-serif;background:radial-gradient(center,ellipsecover,#ffffff72%,#dddddd100%);margin:0;padding:0}
+#wrapper{background-color:#FFF;border:2px solid #8D8D8D;border-radius:5px;box-shadow:1px -2px 39px #444;height:1280px;width:993px;margin:35px auto 36px;padding:0}
+#header_item{height:80px;width:993px;margin:auto}
+#header_item img{float:left;margin-left:35px;margin-top:33px; border:none;}
+#mainmenu{font-size:14px;list-style:none outside none;text-transform:uppercase;margin:0 0 0 448px;padding:0}
+#mainmenu li{float:left;padding:3px}
+#mainmenu li a{background-color:#36C;color:#FFF;display:block;text-decoration:none;padding:8px}
+#mainmenu li a:hover{background-color:#333;color:#FFFAF0}
+#banner{width:987px}
+#banner img{margin-left:16px;margin-top:11px;border-radius:5px}
+#content_item{height:294px;margin-top:11px}
+#service_one{background-color:#DCDCDC;border:2px solid #8D8D8D;float:left;height:290px;margin-left:15px;width:310px;z-index:1;border-radius:5px}
+#service_three{background-color:#DCDCDC;border:2px solid #8D8D8D;float:right;height:290px;margin-right:16px;width:310px;z-index:1;border-radius:5px}
+#service_two{background-color:#DCDCDC;border:2px solid #8D8D8D;float:left;height:290px;margin-left:11px;width:310px;z-index:1;border-radius:5px}
+#text_p{line-height:22px;color:#333;padding:8px}
+#text_m{padding:8px}
+#service_link{color:#000;text-decoration:none}
+#welcome_nots{border:2px solid #8D8D8D;height:256px;margin-left:14px;margin-right:213px;margin-top:11px;width:962px;border-radius:5px}
+#notes_title{margin-bottom:-10px;margin-left:10px;text-shadow:-4px 2px #C2BFBF}
+#notes_discription{margin-bottom:134px;margin-left:10px;line-height:22px}
+#footer{border:2px solid #8D8D8D;color:#000;height:88px; border-radius:5px; margin:11px 15px auto 14px}
+#social_icon{height:27px;margin:13px auto auto;border:none;}
+#social{margin:0 0 0 330px;padding:0;}
+#social li{float:left;list-style-type:none;padding:2px;}
+#social li a{display:block;text-decoration:none;padding:1px;}
+#Copyright{margin-bottom:25px;margin-left:65px}
+h2{margin-left:25px;text-shadow:-4px -4px #dad7d7}
+#Global_content{border:2px solid #8D8D8D;height:552px;margin-left:16px;margin-right:48px;margin-top:11px;width:959px;border-radius:5px}
+#Global_footer{border:2px solid #8D8D8D;color:#000;height:91px;border-radius:5px;margin:16px 15px auto 14px}
+#plan_chart{line-height:28px}
+#quick_link li{list-style-type:none}
+#quick_link li a{text-decoration:none}
+#quick_link li a:hover{color:#06F}
+[class*=btn-]{border-radius:16px;box-shadow:0 1px 0 rgba(255,255,255,0.2) inset, 0 1px 2px rgba(0,0,0,0.08);color:#FFF;display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:14px;text-decoration:none;text-shadow:0 1px 1px rgba(0,0,0,0.075);transition:background-color .1s linear 0;float:right;margin-right:18px;margin-top:8px;padding:3px 7px}
+[class*=btn-]:hover{cursor:pointer}
+.btn-blue{background-color:#36C;border:1px solid #2C5B68}
+.btn-blue:hover{background-color:#3A83D5}
+.btn-blue:active{background-color:#2A5BBF}
+#about_banner{height:455px;width:960px;margin:auto}
+#home_text_fix_line_height{line-height:23px;margin-left:10px;}
+#fixed{bottom: 33px;float: right;position: fixed;right: 62px;width: 41px;border:none;}
+#service_description_one,#service_discription_two,#service_discription_three{background-color:#FFF;color:#666;height:230px;margin-top:-10px;width:auto;z-index:2}
+#Service_title_one,#service_title_two,#service_title_three{text-align:center}

@@ -1,0 +1,8 @@
+create TABLE userdetails (id varchar(max),num int identity not null,name varchar(max),
+guardian varchar(max),guardianname varchar(max),
+dob varchar(max),pan varchar(max),adhaarcardno varchar(max),gender varchar(max),
+maritalstatus varchar(max),natinality varchar(max),qualification varchar(max),
+mobno varchar(max),telno varchar(max),emailid varchar(max),address varchar(max),town varchar(max),district varchar(max),
+state varchar(max),pin varchar(max),voterid varchar(max),passporturl varchar(max),thumburl varchar(max),
+signatureurl varchar(max),date varchar(max),status varchar(max)
+);
