@@ -1,0 +1,454 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HomePage.master.cs" Inherits="HomePage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit"  TagPrefix="cc1"%>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>::WELCOME TO TUTRANGA ANCHAL SIKSHANIKETAN::</title>
+<meta name="description" content="Welcome to Tutranga Anchal Sikshaniketan">
+<meta name = "keywords" content="tutranga,tutranga anchal,tutranga anchal sikshaniketan,tutranga school,thakurchak,tasn">
+<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 900px;
+        }
+        .style2
+        {
+            height: 23px;
+            text-align: center;
+        }
+        .style3
+        {
+            width: 161px;
+        }
+        #sddm
+{ 
+	margin: 0;
+ padding: 0;
+ z-index: 30
+ }
+
+#sddm li
+{ 
+	margin: 0;
+ padding: 0;
+ list-style: none;
+ float: left;
+ font: bold 11px arial;
+            width: 120px;
+        }
+
+#sddm li a
+{
+	 display: block;
+ margin: 0 1px 0 0;
+ padding: 4px 10px;
+ width: 120px;
+ background: #5970B2;
+ color: #FFF;
+ text-align: center;
+ text-decoration: none
+        }
+
+#sddm li a:hover
+{ 
+	background: #49A3FF
+	}
+
+#sddm div
+
+{ 
+	position: absolute;
+ visibility: hidden;
+ margin: 0;
+ padding: 0;
+ background: #EAEBD8;
+ border: 1px solid #5970B2
+ }
+
+ #sddm div a
+ { 
+ 	position: relative;
+  display: block;
+  margin: 0;
+  padding: 5px 10px;
+  width: auto;
+  white-space: nowrap;
+  text-align: left;
+  text-decoration: none;
+  background: #EAEBD8;
+  color: #2875DE;
+  font: 11px arial
+  }
+
+ #sddm div a:hover
+ { 
+ 	background: #49A3FF;
+  color: #FFF
+  }
+  .footer
+  {
+      border:2px solid #8D8D8D;
+      color:#000;
+      height:55px; 
+      border-radius:5px; 
+      margin:11px 15px auto 14px;
+      border: 1px solid #2b4479;
+  border: 1px solid #2d4373;
+  -webkit-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -o-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -ms-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+.wrapper
+{
+    border:2px solid #8D8D8D;
+      color:#000;
+width: 875px;
+      border-radius:5px; 
+      border: 1px solid #2b4479;
+  border: 1px solid #2d4373;
+  -webkit-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -o-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -ms-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+.header
+{
+    border: 1px solid #2d4373;
+  -webkit-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -o-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  -ms-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+    </style>
+    <script type="text/javascript">
+    var timeout = 500;
+
+var closetimer = 0;
+var ddmenuitem = 0;
+
+// open hidden layer
+function mopen(id)
+
+{ 
+ // cancel close timer
+ mcancelclosetime();
+
+ // close old layer
+ if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+ // get new layer and show it
+ ddmenuitem = document.getElementById(id);
+ ddmenuitem.style.visibility = 'visible';
+
+}
+
+// close showed layer
+function mclose()
+{
+ if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+
+{
+ closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+ if(closetimer)
+ {
+  window.clearTimeout(closetimer);
+  closetimer = null;
+ }
+}
+
+
+// close layer when click-out
+document.onclick = mclose;
+</script> 
+<link rel='stylesheet' type='text/css' href='styles.css' />
+<link rel='stylesheet' type='text/css' href='body.css' />
+<link rel='stylesheet' type='text/css' href='section.css' />
+</head>
+<body style="font-family: 'Slabo 27px', serif;">
+    <form id="form1" runat="server">
+    <div>
+<center>
+        <table class="style1" 
+            style="background-color: #545d69; ">
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;</td>
+                <td colspan="5" rowspan="5">
+                <div class="header">
+                    <asp:Image ID="Image1" runat="server" Height="124px" Width="875px" 
+                        ImageUrl="~/PIC/cover.jpg" />
+                        </div>
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2">
+                    </td>
+                <td class="style2" colspan="5">
+                  
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='index.aspx'><span>Home</span></a></li>
+   <li class='has-sub'><a href='index.aspx'><span>ACADEMIC SECTION</span></a>
+      <ul>
+         <li class='has-sub'><a href='studentresult.aspx'><span>RESULT</span></a>
+         </li>
+         <li class='has-sub'><a href='teacherdetails.aspx?trade=science'><span>FACULTY</span></a>
+         </li>
+         <li class='has-sub'><a href='#'><span>STUDENT ACTIVITY</span></a>
+         </li>
+      </ul>
+   </li>
+   <li><a href='NEWS.aspx'><span>NEWS</span></a></li>
+   <li><a href='gallery.aspx'><span>GALLERY</span></a></li>
+   <li><a href='admission.aspx'><span>ADMISSION</span></a></li>
+   <li class='last'><a href='contact.aspx'><span>Contact</span></a>
+   </li>
+</ul>
+</div>
+
+                    </td>
+                <td class="style2">
+                    </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td colspan="5" rowspan="24" 
+                    
+                    
+                    style=" position: static; left: 20px; right: 280px;" >
+                     
+                   <div class="wrapper">
+                     
+                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                     </asp:ContentPlaceHolder>
+                     
+                   </div>
+                     
+                     </td>
+        
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td colspan="5" style="color: #ffffff; background-color: #3b5998;" class="footer">
+                    This site is maintained and hosted&nbsp;by&nbsp;<asp:HyperLink ID="HyperLink1" 
+                        runat="server" Font-Underline="False" 
+                        NavigateUrl="https://www.facebook.com/soumyakanti.ghosh" 
+                        style="font-weight: 700; color: #800000" Target="_blank">Soumya kanti Ghosh</asp:HyperLink>
+                    &nbsp;|| copyright reserved by&nbsp;Tutranga Anchal Sikshaniketan ©2014||
+                    <asp:LinkButton ID="LinkButton1" runat="server">DISCLAIMER</asp:LinkButton>
+                    </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+      </center>
+    </div>
+    </form>
+     </body>
+</html>

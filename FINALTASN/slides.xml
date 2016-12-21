@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<flash_parameters copyright="anvsoftPFMTheme">
+    <preferences>
+        <global>
+            <basic_property movieWidth="854" movieHeight="410" backgroundColor="0xfffbf0" html_title="Title" loadStyle="res/preloader-pointer.png" startAutoPlay="true" clickToAutoPlay="true" anvsoftMenu="false" randomPlayingPhotos="false" continuum="true" enableURL="false" frameRate="30" transitionArray=""/>
+            <title_property showTitle="true" backgroundColor="0xfffbf0" alpha="30" titleTextFont="Lucida Sans Unicode" photoTitleColor="0xffffff" titleTextSize="12" titleTextHeight="18" autoHide="true"/>
+            <music_property path="" stream="true" loop="true" autoPlay="true"/>
+            <photo_property topPadding="0" bottomPadding="50" leftPadding="0" rightPadding="0"/>
+            <description_property enable="true" backgroundColor="0x000000" backgroundAlpha="30" defaultTextFont="Lucida Sans Unicode" defaultTextColor="0xffffff" defaultTextSize="12" lineHeight="14" align="bottom"/>
+            <video_property bufferTime="5" autoPlay="true" controls="true"/>
+        </global>
+        <thumbnail>
+            <basic_property thumWidth="45" thumHeight="35" borderColor="0xffffff" currentBorderColor="0xffff00" thumborder="2" thumSpacing="10"/>
+        </thumbnail>
+    </preferences>
+    <album>
+        <slide jpegURL="thumbs/t_0001.jpg" d_URL="slides/p_0001.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="PRAYER" width="854" height="360"/>
+        <slide jpegURL="thumbs/t_0002.jpg" d_URL="slides/p_0002.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="SCHOOL FRONT VIEW" width="854" height="360"/>
+        <slide jpegURL="thumbs/t_0003.jpg" d_URL="slides/p_0003.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="NEW HOSTEL" width="854" height="360"/>
+        <slide jpegURL="thumbs/t_0004.jpg" d_URL="slides/p_0004.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="SCHOOL PLAYGROUND" width="854" height="360"/>
+        <slide jpegURL="thumbs/t_0005.jpg" d_URL="slides/p_0005.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="OLD BUILDING" width="854" height="360"/>
+        <slide jpegURL="thumbs/t_0006.jpg" d_URL="slides/p_0006.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="PRAYER" width="854" height="360"/>
+        <slide jpegURL="thumbs/t_0007.jpg" d_URL="slides/p_0007.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="PRAYER" width="854" height="360"/>
+        <slide jpegURL="thumbs/t_0008.jpg" d_URL="slides/p_0008.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="SCHOOL PRAYER" width="854" height="360"/>
+        <slide jpegURL="thumbs/t_0009.jpg" d_URL="slides/p_0009.jpg" transition="41" panzoom="1" URLTarget="0" phototime="5" transitiontime="2" url="gallery.aspx" title="STUDENTS AT MORNING PRAYER" width="854" height="360"/>
+    </album>
+</flash_parameters>
